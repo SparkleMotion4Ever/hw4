@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PWA Demo Page</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <title>PWA Demo Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
+    <h1>Understanding Progressive Web Applications (PWAs)</h1>
+    <p>
+        Progressive Web Applications are web applications that provide an app-like experience using modern web capabilities. They are designed to be reliable, fast, and engaging, even on unreliable networks. PWAs leverage features like service workers and web app manifests to deliver these experiences.
+    </p>
+    <p>
+        Key characteristics of PWAs include responsiveness, offline capabilities, app-like interactions, fresh content, security through HTTPS, discoverability, re-engageability through push notifications, installability without app stores, and easy linkability.
+    </p>
 
-  <h1>Understanding Progressive Web Applications (PWAs)</h1>
+    <label for="background-select">Choose a background:</label>
+    <select id="background-select">
+        <option value="">--Please choose an option--</option>
+        <option value="light-blue">Light Blue</option>
+        <option value="light-gold">Light Gold</option>
+    </select>
+    <button id="change-background">Change Background</button>
 
-  <p>
-    Progressive Web Applications are web applications that provide an app-like experience using modern web capabilities. They are designed to be reliable, fast, and engaging, even on unreliable networks. PWAs leverage features like service workers and web app manifests to deliver these experiences.
-  </p>
+    <br><br>
 
-  <p>
-    Key characteristics of PWAs include responsiveness, offline capabilities, app-like interactions, fresh content, security through HTTPS, discoverability, re-engageability through push notifications, installability without app stores, and easy linkability.
-  </p>
+    <!-- Input box for extra credit -->
+    <label for="user-name">Enter your name:</label>
+    <input type="text" id="user-name" placeholder="Your name here">
 
-  <label for="background-select">Choose a background:</label>
-  <select id="background-select">
-    <option value="">--Please choose an option--</option>
-    <option value="lightblue">Light Blue</option>
-    <option value="lightgold">Light Gold</option>
-  </select>
+    <p id="greeting"></p>
 
-  <button id="change-background">Change Background</button>
+    <script>
+        // JavaScript for background selection
+        const backgroundSelect = document.getElementById('background-select');
+        const changeBackground = () => {
+            const selectedValue = backgroundSelect.value;
+            if (selectedValue === 'light-blue') {
+                document.body.style.backgroundImage = "url('light-blue.jpg')";
+            } else if (selectedValue === 'light-gold') {
+                document.body.style.backgroundImage = "url('light-gold.jpg')";
+            } else {
+                document.body.style.backgroundImage = '';
+            }
+        };
+        backgroundSelect.addEventListener('change', changeBackground);
 
-  <script>
-    // JavaScript Logic to change the background image
-    const backgroundSelect = document.getElementById('background-select');
-    const changeBackgroundButton = document.getElementById('change-background');
+        // JavaScript for Extra Credit: Handling name input and localStorage
+        const nameInput = document.getElementById('user-name');
+        const greetingParagraph = document.getElementById('greeting');
 
-    function changeBackground() {
-      const selectedValue = backgroundSelect.value;
-      if (selectedValue === 'lightblue') {
-        document.body.style.backgroundImage = "url('lightblue.jpg')";
-      } else if (selectedValue === 'lightgold') {
-        document.body.style.backgroundImage = "url('lightgold.jpg')";
-      } else {
-        document.body.style.backgroundImage = '';
-      }
-    }
-
-    // Change background when the button is clicked
-    changeBackgroundButton.addEventListener('click', changeBackground);
-
-    // Alternatively, change background immediately upon selection
-    backgroundSelect.addEventListener('change', changeBackground);
-  </script>
-<script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/hw4/service-worker.js')
-        .then(function(registration) {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch(function(error) {
-          console.error('Service Worker registration failed:', error);
+        // Load any saved name from localStorage when the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedName = localStorage.getItem('name');
+            if (savedName) {
+                greetingParagraph.textContent = `Hello, ${savedName}! Welcome back.`;
+                nameInput.value = savedName;
+            }
         });
-    }
-  </script>
-  
-  
+
+        // Save the user's name when they stop typing (on blur event)
+        nameInput.addEventListener('blur', () => {
+            const name = nameInput.value.trim();
+            if (name) {
+                localStorage.setItem('name', name);
+                greetingParagraph.textContent = `Hello, ${name}! Welcome back.`;
+            }
+        });
+    </script>
 </body>
 </html>
