@@ -1,0 +1,60 @@
+/* Start with a plain white background */
+body {
+  background-color: white;
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Styling for the heading */
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* Styling for paragraphs */
+p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Styling for the label and select elements */
+label {
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+select {
+  font-size: 1em;
+  padding: 5px;
+}
+
+/* Styling for the button */
+button {
+  font-size: 1em;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  label, select, button {
+    font-size: 0.9em;
+  }
+}

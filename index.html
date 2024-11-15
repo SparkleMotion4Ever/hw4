@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PWA Demo Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <h1>Understanding Progressive Web Applications (PWAs)</h1>
+
+  <p>
+    Progressive Web Applications are web applications that provide an app-like experience using modern web capabilities. They are designed to be reliable, fast, and engaging, even on unreliable networks. PWAs leverage features like service workers and web app manifests to deliver these experiences.
+  </p>
+
+  <p>
+    Key characteristics of PWAs include responsiveness, offline capabilities, app-like interactions, fresh content, security through HTTPS, discoverability, re-engageability through push notifications, installability without app stores, and easy linkability.
+  </p>
+
+  <label for="background-select">Choose a background:</label>
+  <select id="background-select">
+    <option value="">--Please choose an option--</option>
+    <option value="lightblue">Light Blue</option>
+    <option value="lightgold">Light Gold</option>
+  </select>
+
+  <button id="change-background">Change Background</button>
+
+  <script>
+    // JavaScript Logic to change the background image
+    const backgroundSelect = document.getElementById('background-select');
+    const changeBackgroundButton = document.getElementById('change-background');
+
+    function changeBackground() {
+      const selectedValue = backgroundSelect.value;
+      if (selectedValue === 'lightblue') {
+        document.body.style.backgroundImage = "url('lightblue.jpg')";
+      } else if (selectedValue === 'lightgold') {
+        document.body.style.backgroundImage = "url('lightgold.jpg')";
+      } else {
+        document.body.style.backgroundImage = '';
+      }
+    }
+
+    // Change background when the button is clicked
+    changeBackgroundButton.addEventListener('click', changeBackground);
+
+    // Alternatively, change background immediately upon selection
+    backgroundSelect.addEventListener('change', changeBackground);
+  </script>
+
+</body>
+</html>
