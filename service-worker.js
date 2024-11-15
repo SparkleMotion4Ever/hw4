@@ -4,14 +4,14 @@ const assetsToCache = [
   '/index.html',
   '/styles.css',
   '/manifest.json',
-  '/icons/aha72.jpg',
-  '/icons/aha96.jpg',
-  '/icons/aha128.jpg',
-  '/icons/aha144.jpg',
-  '/icons/aha152.jpg',
-  '/icons/aha192.jpg',
-  '/icons/aha384.jpg',
-  '/icons/aha512.jpg',
+  '/aha72.jpg',
+  '/aha96.jpg',
+  '/aha128.jpg',
+  '/aha144.jpg',
+  '/aha152.jpg',
+  '/aha192.jpg',
+  '/aha384.jpg',
+  '/aha512.jpg',
 ];
 
 self.addEventListener('install', (event) => {
