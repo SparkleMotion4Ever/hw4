@@ -1,50 +1,50 @@
 {
     "name": "Your App Name",
     "short_name": "AppName",
-    "start_url": "./index.html",
+    "start_url": "./hw4/index.html",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#FFFFFF",
     "icons": [
       {
-        "src": "aha72.jpg",
+        "src": "aha72.png",
         "sizes": "72x72",
-        "type": "image/jpeg"
+        "type": "image/png"
       },
       {
-        "src": "aha96.jpg",
+        "src": "aha96.png",
         "sizes": "96x96",
-        "type": "image/jpeg"
+        "type": "image/png"
       },
       {
-        "src": "aha128.jpg",
+        "src": "aha128.png",
         "sizes": "128x128",
-        "type": "image/jpeg"
+        "type": "image/png"
       },
       {
-        "src": "aha144.jpg",
+        "src": "aha144.png",
         "sizes": "144x144",
-        "type": "image/jpeg"
+        "type": "image/png"
       },
       {
-        "src": "aha152.jpg",
+        "src": "aha152.png",
         "sizes": "152x152",
-        "type": "image/jpeg"
+        "type": "image/png"
       },
       {
-        "src": "aha192.jpg",
+        "src": "aha192.png",
         "sizes": "192x192",
-        "type": "image/jpeg"
+        "type": "image/png"
       },
       {
-        "src": "aha384.jpg",
+        "src": "aha384.png",
         "sizes": "384x384",
-        "type": "image/jpeg"
+        "type": "image/png"
       },
       {
-        "src": "aha512.jpg",
+        "src": "aha512.png",
         "sizes": "512x512",
-        "type": "image/jpeg"
+        "type": "image/png"
       }
     ]
   }
