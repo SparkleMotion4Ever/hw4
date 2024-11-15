@@ -15,6 +15,7 @@
         Key characteristics of PWAs include responsiveness, offline capabilities, app-like interactions, fresh content, security through HTTPS, discoverability, re-engageability through push notifications, installability without app stores, and easy linkability.
     </p>
 
+    <!-- Background selection dropdown and button -->
     <label for="background-select">Choose a background:</label>
     <select id="background-select">
         <option value="">--Please choose an option--</option>
@@ -34,17 +35,21 @@
     <script>
         // JavaScript for background selection
         const backgroundSelect = document.getElementById('background-select');
+        const changeBackgroundButton = document.getElementById('change-background');
+
         const changeBackground = () => {
             const selectedValue = backgroundSelect.value;
             if (selectedValue === 'light-blue') {
-                document.body.style.backgroundImage = "url('light-blue.jpg')";
+                document.body.style.backgroundImage = "url('lightblue.jpg')";
             } else if (selectedValue === 'light-gold') {
-                document.body.style.backgroundImage = "url('light-gold.jpg')";
+                document.body.style.backgroundImage = "url('lightgold.jpg')";
             } else {
                 document.body.style.backgroundImage = '';
             }
         };
-        backgroundSelect.addEventListener('change', changeBackground);
+
+        // Add event listener to change background on button click
+        changeBackgroundButton.addEventListener('click', changeBackground);
 
         // JavaScript for Extra Credit: Handling name input and localStorage
         const nameInput = document.getElementById('user-name');
@@ -59,8 +64,8 @@
             }
         });
 
-        // Save the user's name when they stop typing (on blur event)
-        nameInput.addEventListener('blur', () => {
+        // Save the user's name when they finish typing (using 'input' or 'blur' event)
+        nameInput.addEventListener('input', () => {
             const name = nameInput.value.trim();
             if (name) {
                 localStorage.setItem('name', name);
