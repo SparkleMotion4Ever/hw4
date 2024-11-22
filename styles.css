@@ -1,4 +1,4 @@
-/* Start with a plain white background */
+
 body {
     background-color: white;
     margin: 0;
@@ -9,20 +9,20 @@ body {
     background-position: center;
   }
   
-  /* Styling for the heading */
+
   h1 {
     font-size: 2em;
     margin-bottom: 0.5em;
   }
   
-  /* Styling for paragraphs */
+  
   p {
     font-size: 1em;
     line-height: 1.6;
     margin-bottom: 1em;
   }
   
-  /* Styling for the label, input, and select elements */
+  
   label {
     font-size: 1em;
     margin-right: 10px;
@@ -35,7 +35,7 @@ body {
     width: 200px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    display: block; /* Ensures the input is on a separate line */
+    display: block; 
   }
   
   select {
@@ -43,21 +43,21 @@ body {
     padding: 5px;
   }
   
-  /* Styling for the button */
+  
   button {
     font-size: 1em;
     padding: 5px 10px;
     margin-left: 10px;
   }
   
-  /* Styling for the greeting paragraph */
+  
   #greeting {
     font-size: 1em;
     margin-top: 10px;
-    color: #333; /* Make sure the color contrasts well with the background */
+    color: #333; 
   }
   
-  /* Responsive design */
+  
   @media screen and (max-width: 600px) {
     body {
       padding: 10px;

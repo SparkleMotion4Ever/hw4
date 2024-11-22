@@ -15,7 +15,7 @@
         Key characteristics of PWAs include responsiveness, offline capabilities, app-like interactions, fresh content, security through HTTPS, discoverability, re-engageability through push notifications, installability without app stores, and easy linkability.
     </p>
 
-    <!-- Background selection dropdown and button -->
+    
     <label for="background-select">Choose a background:</label>
     <select id="background-select">
         <option value="">--Please choose an option--</option>
@@ -26,14 +26,14 @@
 
     <br><br>
 
-    <!-- Input box for extra credit -->
+    
     <label for="user-name">Enter your name:</label>
     <input type="text" id="user-name" placeholder="Your name here">
 
     <p id="greeting"></p>
 
     <script>
-        // JavaScript for background selection
+    
         const backgroundSelect = document.getElementById('background-select');
         const changeBackgroundButton = document.getElementById('change-background');
 
@@ -48,14 +48,14 @@
             }
         };
 
-        // Add event listener to change background on button click
+        
         changeBackgroundButton.addEventListener('click', changeBackground);
 
-        // JavaScript for Extra Credit: Handling name input and localStorage
+        
         const nameInput = document.getElementById('user-name');
         const greetingParagraph = document.getElementById('greeting');
 
-        // Load any saved name from localStorage when the page loads
+        
         window.addEventListener('DOMContentLoaded', () => {
             const savedName = localStorage.getItem('name');
             if (savedName) {
@@ -64,7 +64,7 @@
             }
         });
 
-        // Save the user's name when they finish typing (using 'input' or 'blur' event)
+        
         nameInput.addEventListener('input', () => {
             const name = nameInput.value.trim();
             if (name) {
